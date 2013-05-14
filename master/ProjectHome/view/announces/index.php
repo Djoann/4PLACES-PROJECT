@@ -103,8 +103,8 @@
           
           .display {
               position: fixed;
-              margin-top: 0%;
-              margin-left: 60%;
+              margin-top: 2%;
+              margin-left: 59%;
               z-index: 10;
           }
           

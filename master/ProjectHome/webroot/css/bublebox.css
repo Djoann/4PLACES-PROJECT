@@ -32,6 +32,7 @@ margin-left: 20%;
 
 
 .buble {
+margin: 10px;
 position: relative;
 top: 0px;
 left: 0;
@@ -123,7 +124,7 @@ border-radius: 0.3125em;
 
 
 .bubletxt {
-    width: 60%;
+    width: 90%;
     margin: 10px;
 }
 

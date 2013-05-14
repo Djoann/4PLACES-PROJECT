@@ -20,14 +20,40 @@ input.span2 {
 
 /***  PROFILE BOX   ****/
 
+#profile-infos {
+    margin-top: 30px;
+    width: 90%;
+    height: 400px;
+    margin-left: 5%;
+}
+
+
 #profilemasterbox {
 overflow: scroll;
-float: right;
+margin-left: 5%;
+float: left;
 width: 60%;
-height: 500px;
+height: 300px;
 background-color: white;
 border-radius: 5px;
 border: 1px solid #b0b0b0;
+}
+
+#profil-infobox {
+background-color: white;
+border-radius: 5px;
+border: 1px solid #b0b0b0;
+width: 30%;
+float: left;
+}
+
+
+.announce-comments {
+    float: right;
+}
+
+.infos-left {
+
 }
 
 
@@ -158,6 +184,7 @@ display: inline-block;
 /* PHOTO STREET */
 
 .street-logo {
+margin-left: 3%;
 -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0.1875em 0.125em;
 -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0.1875em 0.125em;
 box-shadow: rgba(0, 0, 0, 0.2) 0 0 0.1875em 0.125em;
@@ -194,11 +221,12 @@ border: 0;
 }
 
 .street-intro {
+margin-left: 5%;
 padding: 0.825em 1.5em;
 margin-right: 0;
 margin-bottom: 0;
 top: -10.425em;
-width: 78%;
+width: 70%;
 height: 7.35em;
 left: 15.75em;
 display: block;
