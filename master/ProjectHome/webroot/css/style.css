@@ -1,0 +1,159 @@
+/*
+ *
+ * Template Name: Andia
+ * Template URI: http://azmind.com
+ * Description: Andia - Responsive Agency Template
+ * Author: Anli Zaimi
+ * Author URI: http://azmind.com
+ *
+ */
+
+
+body {
+    background: #fff;
+    text-align: center;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    color: #000;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.street-header {
+position: relative;
+height: auto;
+}
+
+
+a: active {
+text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#content {
+    margin-top: 10px;
+}
+
+
+#header .navbar-inner {
+background-color: #1B1B1B;
+background-image: -moz-linear-gradient(top, #222, #111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222), to(#111));
+background-image: -webkit-linear-gradient(top, #222, #111);
+background-image: -o-linear-gradient(top, #222, #111);
+background-image: linear-gradient(to bottom, #222, #111);
+background-repeat: repeat-x;
+border-color: #252525;
+}
+
+.navbar-inner {
+min-height: 40px;
+padding-left: 20px;
+padding-right: 20px;
+
+-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+
+.brandcontainer {
+width: 100%;
+height: 40px;
+margin-right: auto;
+margin-left: 5%;
+}
+
+
+
+
+/*********************       NAVBAR      ***************************/
+.navbar {
+top: 0;
+}
+
+#header {
+position: fixed;
+right: 0;
+left: 0;
+z-index: 100;
+margin-bottom: 0;
+top:  0px;
+height: 40px;
+}
+
+.navbar .brand {
+display: block;
+float: left;
+padding: 10px 20px 10px;
+margin-left: -20px;
+font-size: 20px;
+font-weight: 200;
+color: #777;
+text-shadow: 0 1px 0 white;
+}
+
+#header .brand {
+color: #999;
+}
+
+#header .nav {
+position: relative;
+left: 0;
+display: block;
+float: left;
+margin: 0 10px 0 0;
+list-style: none;
+display: block;
+}
+
+ .nav {
+     width: 80%;
+     height: 40px;
+     float: left;
+     display: inline-block;
+ }
+
+
+.menuli {
+    float: left;
+    display: inline;
+    margin-right: 10px;
+}
+
+.nav > li > a {
+
+
+}
+
+
+#header .brand, #header .nav > li > a {
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+padding: 10px 0px 0px;
+color: rgb(221, 221, 221);
+text-decoration: none;
+float: left;
+}
+
+
+.search-area {
+float: right;
+width: 350px;
+margin-left: 20%;
+}
+
+
+.postbutton {
+    color: #fff;
+}
+
+

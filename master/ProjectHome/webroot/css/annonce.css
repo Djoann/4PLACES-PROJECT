@@ -1,0 +1,122 @@
+
+.street-header {
+position: relative;
+padding-top: 50px;
+background-image: url("http://givenget.eu/place4/mapimg.png");
+height: auto;
+}
+
+#viewbox {
+    width: 100%;
+    height: 180px;
+    margin-right: 10%;
+}
+
+#box {
+    width: 100%;
+    height: 100%;
+    display: inline-box;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+
+.hero-unit {
+height: 120px;
+padding: 0px;
+overflow: hidden;
+margin: 0 0 30px 3px;
+font-size: 18px;
+font-weight: 200;
+line-height: 30px;
+color: inherit;
+background-color: #fff;
+border: 1px solid #BBB;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+}
+
+
+.btn {
+    background-image: -webkit-linear-gradient(top, white, #E6E6E6);
+    background-image: -o-linear-gradient(top, white, #E6E6E6);
+    background-image: linear-gradient(to bottom, white, #E6E6E6);
+    background-repeat: repeat-x;
+    
+    border: 1px solid #BBB;
+    color: black;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+}
+
+.btn:hover {
+color: #333;
+text-decoration: none;
+background-position: 0 -15px;
+-webkit-transition: background-position 0.1s linear;
+-moz-transition: background-position 0.1s linear;
+-o-transition: background-position 0.1s linear;
+transition: background-position 0.1s linear;
+}
+
+button.btn.btn-a {
+    width: 100%;
+    height: 40px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+button.btn.btn-b {
+    width: 100%;
+    height: 50px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+button.btn.btn-a bottom {
+    border-bottom-right-radius: 4px;
+}
+
+button.btn.btn-large {
+    width: 100%;
+    height: 50px;
+    margin: 0 0 0 3px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+li {
+    width: 100%;
+}
+li .hero-unit {
+    width: 100%;
+}
+
+.box1 {
+width: 58%;
+display: inline;
+float: left;
+}
+
+.box2 {
+width: 30%;
+display: inline;
+float: left;
+}
+
+li btn btn-b{
+display: list-item;
+}
+
+
+ul {
+    float: left;
+    list-style: none;
+    margin: 5px 0 0 0;
+}
+

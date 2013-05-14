@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+body {
+
+    padding-top:50px;
+}
+
+.connection {
+    margin-left:auto;
+    margin-right:auto;
+    width: 343px;
+    height: 333px;
+    padding:30px;
+    border: 1px solid rgba(0,0,0,.2);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.5); 
+    -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    overflow: hidden; 
+}
+
+
+
+#inputlastname , #inputfirstname , #inputpassword , #inputlogin {
+    width: 276px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,.4);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    margin-bottom:20px;
+}
+
+input[type=submit] {
+    cursor:pointer;
+    margin-right: 100px;
+}
+
+.connection input {
+	  background: rgba(255, 255, 255, 0.4) url(../ico/gemicon_email.png) no-repeat scroll 16px 16px; 
+	  padding-left:75px;
+	  margin-left: 30px;
+}
+
+input.email {
+	  background: rgba(255, 255, 255, 0.4) url(../ico/gemicon_message.png) no-repeat scroll 16px 20px;
+	  padding-left:75px;
+	  margin-left: 30px;
+}
+
+input.btn back {
+    margin-right: 50px;
+}
+
+::-webkit-input-placeholder {
+	  color: #fff;
+}
+
+:-moz-placeholder{ 
+    color: #fff; 
+}
+
+::-moz-placeholder {
+    color: #fff;
+}
+
+:-ms-input-placeholder {  
+	  color: #fff; 
+}
+
+input:focus, textarea:focus { 
+	  background-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+	  overflow: hidden; 
+}
+
+.sendconnection {
+      margin: 0px 0;
+      margin-right: 30%;
+	  width: 138px;
+	  height: 44px;
+	  border: 1px solid #253737;
+	  -moz-border-radius: 4px;
+	  -webkit-border-radius: 4px;
+	  border-radius: 4px;
+	  -moz-background-clip: padding;
+	  -webkit-background-clip: padding-box;
+	  background-clip: padding-box;
+	  background-color: #fff;
+	  background-image: -moz-linear-gradient(bottom, #C42F2F 0%, #eeb2b2 100%);
+	  background-image: -o-linear-gradient(bottom, #35b12c 0%, #367c2d 100%);
+	  background-image: -webkit-linear-gradient(bottom, #d14444 0%, #C42F2F 100%);
+	  background-image: linear-gradient(bottom, #35b12c 0%, #367c2d 100%);
+	  float:right;
+      color: #fff;
+  }
+
+

@@ -1,0 +1,73 @@
+
+#nice_footer {
+font-family: 'arial';
+min-height: 47px;
+background: #333;
+background-color: #1B1B1B;
+background-image: -moz-linear-gradient(top, #222, #111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222), to(#111));
+background-image: -webkit-linear-gradient(top, #222, #111);
+background-image: -o-linear-gradient(top, #222, #111);
+background-image: linear-gradient(to bottom, #222, #111);
+background-repeat: repeat-x;
+border-color: #252525;
+
+bottom: 0px;
+z-index: 1;
+visibility: visible;
+color: #fff;
+position: relative;
+}
+
+
+#nice_footer p.copyrights {
+float: left;
+color: white;
+text-align: center;
+top: 15px;
+font-size: 11px;
+margin-left: 10%;
+}
+
+#nice_footer ul.social-icons {
+float: right;
+position: relative;
+right: 13px;
+list-style: none;
+}
+
+#nice_footer .social-icons li {
+background: none;
+cursor: pointer;
+float: left;
+margin: 0 4px 0 4px;
+height: 25px;
+width: 25px;
+}
+
+#nice_footer .social-icons li a {
+display: block;
+width: 25px;
+height: 25px;
+position: relative;
+overflow: hidden;
+}
+
+#nice_footer .social-icons li span {
+position: relative;
+display: inline-block;
+width: 25px;
+height: 25px;
+}
+
+#nice_footer .social-icons li.facebook .icon {
+background: transparent url('assets/img/facebook.png') no-repeat;
+}
+
+#nice_footer .social-icons li.twitter .icon {
+background: transparent url('assets/img/twitter.png') no-repeat;
+}
+
+#nice_footer .social-icons li.google .icon {
+background: transparent url('assets/img/google.png') no-repeat;
+}

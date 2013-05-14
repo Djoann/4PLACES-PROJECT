@@ -1,0 +1,352 @@
+body {
+padding-top: 40px !important;
+}
+
+a {
+color: #C42F2F;
+}
+
+.page-content {
+padding-top: 50px;
+padding-bottom: 50px;
+width: 100%;
+height: 200px;
+}
+
+input.span2 {
+    height: 20px !important;
+}
+
+
+/***  PROFILE BOX   ****/
+
+#profilemasterbox {
+overflow: scroll;
+float: right;
+width: 60%;
+height: 500px;
+background-color: white;
+border-radius: 5px;
+border: 1px solid #b0b0b0;
+}
+
+
+/*******    END PROFILE BOX ***/
+
+#masterbublebox {
+    overflow: scroll;
+    float: right;
+    width: 40%;
+    height: 550px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+}
+
+#editor {
+    position: relative;
+    float: left;
+}
+
+
+/*TOP NAV BAR */
+.search-area {
+float: left;
+width: 400px;
+margin-left: 40%;
+}
+
+
+
+/* COVER */
+
+.street-header-user {
+position: relative;
+padding-top: 50px;
+background-image: url("http://givenget.eu/place4/ruelle.png");
+
+}
+
+figure.street-cover {
+background-image: url('http://givenget.eu/place4/ruelle.png');
+background-repeat:repeat-x;
+}
+
+figure.coversize {
+height: 150px;
+background-size: cover;
+-moz-background-size: cover;
+background-position: center;
+-webkit-margin-start: 40px;
+-webkit-margin-end: 40px;
+}
+
+.coverimage {
+height: 500px;
+max-width: 100em;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+
+.menuwrapper {
+background: white;
+position: relative;
+margin: 0 auto;
+max-width: 90%;
+z-index: 20;
+}
+
+
+/* MEMBER MENU NAV BAR*/
+.street-navigation {
+position: relative;
+background: #C42F2F;
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -0.1875em 0.125em 0.0625em;
+-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 -0.1875em 0.125em 0.0625em;
+box-shadow: rgba(0, 0, 0, 0.2) 0 -0.1875em 0.125em 0.0625em;
+z-index: 600;
+}
+
+.actions-menu {
+position: relative;
+overflow: hidden;
+}
+
+.street-actions {
+background: #C42F2F;
+}
+
+.street-actions a {
+display: block;
+float: left;
+padding: 0.5em 0.4375em 0.75em 0.5625em;
+color: #171717;
+height: 1.5em;
+overflow: hidden;
+color: white;
+}
+
+.street-actions a.first-child {
+margin-left: 20%;
+}
+
+.street-actions a.selected {
+color: #3C3C3C;
+background: white;
+}
+
+.street-actions a {
+display: block;
+float: left;
+padding: 0.5em 0.9375em 0.75em 0.9375em;
+height: 1.5em;
+overflow: hidden;
+}
+
+.icon-with-text {
+display: inline-block;
+padding-right: 0.25em;
+margin-top: 0.125em;
+}
+
+.tribe-actions .hidden {
+display: inline-block;
+}
+
+/* PHOTO STREET */
+
+.street-logo {
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0.1875em 0.125em;
+-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0.1875em 0.125em;
+box-shadow: rgba(0, 0, 0, 0.2) 0 0 0.1875em 0.125em;
+top: -125px;
+
+width: 150px;
+height: 150px;
+padding: 1.125em;
+background: white;
+position: absolute;
+
+z-index: 900;
+-webkit-border-radius: 0.3125em;
+-moz-border-radius: 0.3125em;
+-ms-border-radius: 0.3125em;
+-o-border-radius: 0.3125em;
+border-radius: 0.3125em;
+}
+
+.street-logo img {
+width: 100%;
+height: 100%;
+background: grey;
+-webkit-border-radius: 0.3125em;
+-moz-border-radius: 0.3125em;
+-ms-border-radius: 0.3125em;
+-o-border-radius: 0.3125em;
+border-radius: 0.3125em;
+}
+
+a img, img {
+-ms-interpolation-mode: bicubic;
+border: 0;
+}
+
+.street-intro {
+padding: 0.825em 1.5em;
+margin-right: 0;
+margin-bottom: 0;
+top: -10.425em;
+width: 78%;
+height: 7.35em;
+left: 15.75em;
+display: block;
+
+background: #171717;
+background-color: rgba(23, 23, 23, 0.75);
+position: absolute;
+
+right: 0.75em;
+margin-bottom: 1.5em;
+z-index: 900;
+-webkit-border-radius: 0.3125em;
+-moz-border-radius: 0.3125em;
+-ms-border-radius: 0.3125em;
+-o-border-radius: 0.3125em;
+border-radius: 0.3125em;
+color: white;
+overflow: scroll;
+}
+
+.street-intro h1 {
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+/* BOUTON ANNONCE POST  */ 
+.feed-navigation {
+float: left;
+width: 380px;
+}
+
+.feed-actions {
+background: white;
+}
+.feed-actions .request-link:active {
+background: #C42F2F;
+color: white;
+border: 0.125em solid #804114;
+}
+
+.feed-actions .request-link:hover {
+background: #C42F2F;
+color: white;
+border: 0.125em solid #974C17;
+}
+
+.feed-actions .request-link {
+display: block;
+float: left;
+padding: 0.625em 0.9375em 0.625em 0.9375em;
+color: #D96E21;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-border-radius: 0.3125em;
+-moz-border-radius: 0.3125em;
+-ms-border-radius: 0.3125em;
+-o-border-radius: 0.3125em;
+border-radius: 0.3125em;
+background: #C42F2F;
+border: 0.125em solid #AD581A;
+color: white;
+text-align: center;
+cursor: pointer;
+padding: 0.125em 0.6875em 0.25em 0.6875em;
+margin: 0.75em 0;
+font-size: 1.375em;
+line-height: 1.09091em;
+font-weight: 500;
+padding: 0.5em 0.5em 0.625em 0.5em;
+width: 100%;
+margin: 0 0 0.75em 0;
+}
+
+
+.feed-actions .request-link {
+color: white;
+text-align: center;
+cursor: pointer;
+font-size: 1.375em;
+line-height: 1.09091em;
+font-weight: 500;
+}
+
+.text-with-icon {
+display: inline-block;
+vertical-align: top;
+}
+
+
+
+/* Buble*/
+.bublebox {
+    width: 90%;
+    height: 250px;
+    margin-left: 20%;
+    margin-right: 2%;
+    overflow: scroll;
+}
+
+
+/*********** CORRECT STOP **********/
+
+
+
+
+
+input[type="text"], input[type="password"], textarea {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-border-radius: 0.3125em;
+-moz-border-radius: 0.3125em;
+-ms-border-radius: 0.3125em;
+-o-border-radius: 0.3125em;
+border-radius: 0.3125em;
+border: 1px solid gray;
+width: 200px;
+padding: 0.3125em 0.5em;
+margin: 10px 10px 0 0px;
+resize: none;
+height: 50px;
+}
+
+
+button, .button {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-border-radius: 0.3125em;
+-moz-border-radius: 0.3125em;
+-ms-border-radius: 0.3125em;
+-o-border-radius: 0.3125em;
+border-radius: 0.3125em;
+background: #C42F2F;
+border: 0.125em solid #AD581A;
+color: white;
+text-align: center;
+cursor: pointer;
+padding: 0.125em 0.6875em 0.25em 0.6875em;
+margin: 11px 0;
+display: inline-block;
+float: left;
+}
+
