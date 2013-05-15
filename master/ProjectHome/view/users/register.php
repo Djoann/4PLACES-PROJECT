@@ -9,7 +9,7 @@
 	<?php echo $this->Form->input('id','hidden'); ?>
 
 	<label for="inputlogin"></label>
-	<?php echo $this->Form->input('login', 'Nom d\'utilisateur'); ?>
+	<?php echo $this->Form->input('login', 'Nom d\'utilisateur', array( 'placeholder' => 'Nom d\'utilisateur')); ?>
 
 	<label for="inputpassword"></label>
 	<?php echo $this->Form->input('password', 'Mot de passe', array(
@@ -21,7 +21,7 @@
 	<?php echo $this->Form->input('firstname', 'Prénom', array( 'placeholder' => 'Nom'));?>
 
 	<label for="inputlastname"></label>
-	<?php echo $this->Form->input('lastname', 'Nom', 'class', 'name', array( 'placeholder' => 'Prénom')); ?>
+	<?php echo $this->Form->input('lastname', 'Nom', array( 'placeholder' => 'Prénom')); ?>
 
 	<div class="form-actions">
 		<button type="submit" class="btn sendconnection">Envoyer</button>
