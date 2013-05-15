@@ -1,7 +1,6 @@
 <style>
 .coverimage {
     position: relative;
-    padding-top: 50px;
     background-image: url("http://givenget.eu/place4/ruelle.png");
     height: 200px;
 }

@@ -109,9 +109,10 @@
           }
           
           .leaflet-popup-close-button {
+              position: fixed;
               margin-top: 20px;
-              margin-left: 320px;
-              z-index: 15;
+              margin-left: 180px;
+              z-index: 1500;
           }
           </style>
           
@@ -129,8 +130,8 @@
     
       <!--   menu quartier --> 
       <nav class='street-actions actions-menu'> 
-        <a class='first-child selected' href='#' title='Home'><div class='text-with-icon hidden'>Home</div></a> 
-        <a class='addbox' href='#i' title='New listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
+        <a class='first-child' href='#' title='Annonce Map'><div class='text-with-icon hidden'>Home</div></a> 
+        <a class='addbox selected' href='#i' title='New listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
         <a class='' href='#' title='Community'><div class='text-with-icon hidden'>Voisinage</div></a>
       </nav> <!--  end menu quartier --> 
       
@@ -179,6 +180,7 @@ $(document).ready(function(){
       $("#masterbublebox").addClass("display");
       $(".display").fadeIn(1000);
   }); 
+  
   
   $(".leaflet-popup-close-button").click(function () { 
       console.log('hello');

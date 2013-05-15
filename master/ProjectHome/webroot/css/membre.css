@@ -63,7 +63,7 @@ float: left;
     overflow: scroll;
     float: right;
     width: 40%;
-    height: 550px;
+    height: 500px;
     background-color: white;
     border-radius: 5px;
     border: 1px solid #b0b0b0;
@@ -145,6 +145,7 @@ background: #C42F2F;
 }
 
 .street-actions a {
+width: 100px;
 display: block;
 float: left;
 padding: 0.5em 0.4375em 0.75em 0.5625em;
@@ -152,10 +153,11 @@ color: #171717;
 height: 1.5em;
 overflow: hidden;
 color: white;
+padding: 0.5em 0.9375em 0.75em 0.9375em;
 }
 
 .street-actions a.first-child {
-margin-left: 20%;
+margin-left: 30%;
 }
 
 .street-actions a.selected {
@@ -163,13 +165,7 @@ color: #3C3C3C;
 background: white;
 }
 
-.street-actions a {
-display: block;
-float: left;
-padding: 0.5em 0.9375em 0.75em 0.9375em;
-height: 1.5em;
-overflow: hidden;
-}
+
 
 .icon-with-text {
 display: inline-block;
