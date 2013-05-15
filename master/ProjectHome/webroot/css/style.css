@@ -22,6 +22,17 @@ body {
 }
 
 
+.leaflet-container .leaflet-control-zoom {
+    z-index: 20;
+}
+
+#my-home-bublebox {
+    position: fixed;
+    z-index: 15;
+    width: 100%;
+    height: 100px;
+    background-color: #FFF;
+}
 
 
 .street-header {

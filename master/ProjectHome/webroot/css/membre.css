@@ -60,6 +60,7 @@ float: left;
 /*******    END PROFILE BOX ***/
 
 #masterbublebox {
+    z-index: 30;
     overflow: scroll;
     float: right;
     width: 40%;

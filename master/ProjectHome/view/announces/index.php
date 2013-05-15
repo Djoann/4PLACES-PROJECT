@@ -86,6 +86,11 @@
               
               
               
+      <!-- HOME buble box -->
+          <div id="my-home-bublebox">
+          
+          </div> <!-- END HOME buble box -->
+              
               
   
   <!--  MAP ZONE -->
@@ -94,7 +99,8 @@
           
           <style>
           
-          #map { width: 100%; height: 600px; margin: 0 0 0 0px;
+          #map { z-index: 10;
+              width: 100%; height: 600px; margin: 0 0 0 0px;
           }
           
           .leaflet-popup-content-wrapper {
@@ -169,13 +175,16 @@
 
 <!-- SCRIPTS -->
 
-<script> $(".page-content").hide();
+<script> 
+         $("#my-home-bublebox").hide();
+         $(".page-content").hide();
          $("#masterbublebox").hide();
 </script>
 
 <script> 
 $(document).ready(function(){ 
   $(".addbox").click(function () {
+      $("#my-home-bublebox").fadeOut(1000);
       $(this).addClass("on");
       $("#masterbublebox").addClass("display");
       $(".display").fadeIn(1000);
@@ -227,20 +236,23 @@ $(document).ready(function(){
            
            // Replace view at central Paris
            $("#geo-home").click( function () {
-
+               $("#my-home-bublebox").hide();
                map.setView([48.85522811385678, 2.3531341552734375], 13);
            }) 
            
            // Place view at user ID home adress
            $("#my-home").click( function () {
+                   $("#masterbublebox").hide();
+                   $("#my-home-bublebox").show();
+                   
                    var userloc = $(this).data("userloc");
                    console.log(userloc)
                    console.log("hello")
-                  //map.setView([48.85522811385678, 2.3531341552734375], 13);
+                  map.setView([48.87552621826618, 2.31586754322052], 18);
             }) 
            
            
-           //EVENT AFFICHER ANNONCES 
+           //EVENT AFFICHER UNE ANNONCES 
            $("#masterbublebox h3").each( function () {
                    var e = $(this);
                    var lat = e.attr("data-lat");
