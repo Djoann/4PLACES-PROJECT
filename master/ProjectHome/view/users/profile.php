@@ -73,7 +73,9 @@
             
                <!-- text annonce -->
                <p class="bubletxt"> 
-                   BIO
+                   BIO :
+                   <h1><?php echo $users->firstname; ?>
+                   <?php echo $users->lastname; ?></h1>
                
                
                </p>

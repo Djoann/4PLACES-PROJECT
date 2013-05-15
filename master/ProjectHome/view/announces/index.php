@@ -131,8 +131,8 @@
       <!--   menu quartier --> 
       <nav class='street-actions actions-menu'> 
         <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon hidden'>Home</div></a> 
-        <a class='addbox selected' href='#i' title='New listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
-        <a class='' href='#' title='Community'><div class='text-with-icon hidden'>Voisinage</div></a>
+        <a class='addbox selected' href='#i' title='Announces listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
+        <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userloc="<?php echo $users->address; ?>" >Voisinage</div></a>
       </nav> <!--  end menu quartier --> 
       
     </div>
@@ -194,7 +194,7 @@ $(document).ready(function(){
 <script>
            var map = L.map('map').setView([48.85522811385678, 2.3531341552734375 ], 13);
            L.tileLayer('http://{s}.tile.cloudmade.com/ffdd86e27a8a46129afb5e678456afaf/997/256/{z}/{x}/{y}.png', {
-               attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+               attribution: 'Hello Place4Home',
                maxZoom: 18
            }).addTo(map);
            
@@ -230,6 +230,14 @@ $(document).ready(function(){
 
                map.setView([48.85522811385678, 2.3531341552734375], 13);
            }) 
+           
+           // Place view at user ID home adress
+           $("#my-home").click( function () {
+                   var userloc = $(this).data("userloc");
+                   console.log(userloc)
+                   console.log("hello")
+                  //map.setView([48.85522811385678, 2.3531341552734375], 13);
+            }) 
            
            
            //EVENT AFFICHER ANNONCES 
