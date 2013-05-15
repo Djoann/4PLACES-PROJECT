@@ -138,7 +138,9 @@
       <nav class='street-actions actions-menu'> 
         <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon hidden'>Home</div></a> 
         <a class='addbox selected' href='#i' title='Announces listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
-        <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userloc="<?php echo $users->address; ?>" >Voisinage</div></a>
+        <?php if (isset($_SESSION['User'])): ?>
+          <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userloc="" ><?php echo $_SESSION['User']->lat.' '.$_SESSION['User']->lng; ?></div></a>
+        <?php endif ?>
       </nav> <!--  end menu quartier --> 
       
     </div>
