@@ -38,7 +38,7 @@
           <!-- ZOOM bublebox // annonce --> 
               
               <div class="buble zoombox">
-                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> Annonce - <?php echo $v->user_id; ?></a></h3>
+                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> Title - user ID <?php echo $v->user_id; ?></a></h3>
                 <div class="buble-content">
                        <!-- text annonce -->
                        <p class="bubletxt"><?php echo $v->content; ?></p>
@@ -139,10 +139,10 @@
     
       <!--   menu quartier --> 
       <nav class='street-actions actions-menu'> 
-        <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon hidden'>Home</div></a> 
+        <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon hidden'>MapView</div></a> 
         <a class='addbox selected' href='#i' title='Announces listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
         <?php if (isset($_SESSION['User'])): ?>
-          <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userloc="" ><?php echo $_SESSION['User']->lat.' '.$_SESSION['User']->lng; ?></div></a>
+          <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userloc="<?php echo $_SESSION['User']->lat.' '.$_SESSION['User']->lng; ?>" >Home View</div></a>
         <?php endif ?>
       </nav> <!--  end menu quartier --> 
       
@@ -253,7 +253,7 @@ $(document).ready(function(){
                    var userloc = $(this).data("userloc");
                    console.log(userloc)
                    console.log("hello")
-                  map.setView([48.87552621826618, 2.31586754322052], 18);
+                   map.setView([48.87552621826618, 2.31586754322052], 18);
             }) 
            
            
