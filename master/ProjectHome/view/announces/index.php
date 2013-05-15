@@ -38,7 +38,7 @@
           <!-- ZOOM bublebox // annonce --> 
               
               <div class="buble zoombox">
-                 <h3 href="#" class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" >Annonce - <?php echo $v->user_id; ?></h3></a>
+                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> Annonce - <?php echo $v->user_id; ?></a></h3>
                 <div class="buble-content">
                        <!-- text annonce -->
                        <p class="bubletxt"><?php echo $v->content; ?></p>
@@ -130,7 +130,7 @@
     
       <!--   menu quartier --> 
       <nav class='street-actions actions-menu'> 
-        <a class='first-child' href='#' title='Annonce Map'><div class='text-with-icon hidden'>Home</div></a> 
+        <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon hidden'>Home</div></a> 
         <a class='addbox selected' href='#i' title='New listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
         <a class='' href='#' title='Community'><div class='text-with-icon hidden'>Voisinage</div></a>
       </nav> <!--  end menu quartier --> 
@@ -216,6 +216,20 @@ $(document).ready(function(){
            
            map.on('click', onMapClick);
            */
+           
+           // Click Set new view from announce local
+           $(".geo-announce").click( function () {
+               var lat = $(this).data("lat");
+               var lng = $(this).data("lng");
+               console.log(lat , lng);
+               map.setView([lat ,  lng], 18);
+           }) 
+           
+           // Replace view at central Paris
+           $("#geo-home").click( function () {
+
+               map.setView([48.85522811385678, 2.3531341552734375], 13);
+           }) 
            
            
            //EVENT AFFICHER ANNONCES 
