@@ -88,6 +88,9 @@
               
       <!-- HOME buble box -->
           <div id="my-home-bublebox">
+              <div  class="buble zoombox" id="infos-home-user">
+                  42 rue Miro
+              </div>
           
           </div> <!-- END HOME buble box -->
               
@@ -245,7 +248,7 @@ $(document).ready(function(){
            // Place view at user ID home adress
            $("#my-home").click( function () {
                    $("#masterbublebox").hide();
-                   $("#my-home-bublebox").show();
+                   $("#my-home-bublebox").fadeIn(1000);
                    
                    var userloc = $(this).data("userloc");
                    console.log(userloc)
