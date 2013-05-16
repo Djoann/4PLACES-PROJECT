@@ -60,7 +60,11 @@ body {
 
 
 
+<<<<<<< HEAD
 #inputlastname , #inputfirstname , #inputpassword , #inputlogin , #inputaddress {
+=======
+#inputlastname , #inputfirstname , #inputpassword , #inputlogin {
+>>>>>>> 880f5a767db439f6dc2af9b0bebff3badb8db111
     width: 276px;
     height: 48px;
     border: 1px solid rgba(255,255,255,.4);
@@ -116,13 +120,13 @@ input.btn back {
 	  color: #fff; 
 }
 
-/*input:focus, textarea:focus { 
+input:focus, textarea:focus { 
 	  background-color: rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
     -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
     box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
 	  overflow: hidden; 
-}*/
+}
 
 .sendconnection {
       margin: 0px 0;
