@@ -67,6 +67,9 @@ a {
     margin-top: 10px;
 }
 
+#footer {
+    clear: both;
+}
 
 #header .navbar-inner {
 background-color: #1B1B1B;

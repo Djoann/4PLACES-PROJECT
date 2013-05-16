@@ -29,18 +29,23 @@ body {
 
 
 .test-geocoding-map {
+    margin-left: 5%;
     z-index: 999;
     float: left;
     display: block;
     width: 500px;
-    height: 500px;
+    height: 540px;
     position: relative;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 
 /*    END  REGISTER MAP */
 
 .connection {
+    margin-left: 10%;
     float: left;
     position: relative;
     display: block;
