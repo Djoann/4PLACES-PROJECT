@@ -2,6 +2,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
 
 <div id="register-map"> 
 
@@ -40,7 +41,7 @@
         
         </form>
         
-        <div id="map-test-adress"> </div>
+        <div id="map" class="test-geocoding-map"> </div>
 </div> <!-- END REGISTER MAP -->
 
 <script> 
@@ -68,8 +69,10 @@ function codeAddress() {
       // end interesting function
       var lat = results[0].geometry.location.jb;
       var lng = results[0].geometry.location.kb;
-      //map.setView([lat ,  lng], 16);
       
+      //map.setView([lat ,  lng], 16);
+      map.setView([lat ,  lng], 18);
+      var marker =  L.marker([lat, lng]).addTo(map);
 
     } else {
       alert('Votre adresse est incorrecte' + status);
@@ -78,10 +81,11 @@ function codeAddress() {
 }
 
 
-var map = L.map('map-test-adress').setView([48.85522811385678, 2.3531341552734375 ], 13);
+var map = L.map('map').setView([48.85522811385678, 2.3531341552734375 ], 13);
 L.tileLayer('http://{s}.tile.cloudmade.com/ffdd86e27a8a46129afb5e678456afaf/997/256/{z}/{x}/{y}.png', {
     attribution: 'Hello Place4Home',
-    maxZoom: 1
+    maxZoom: 18
 }).addTo(map);
+
 
 </script>
