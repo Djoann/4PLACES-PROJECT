@@ -203,7 +203,7 @@ function codeAddress() {
       
 
     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
+      alert('Votre adresse est incorrecte' + status);
     }
   });
 }
