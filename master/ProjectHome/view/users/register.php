@@ -18,10 +18,13 @@
 		)); ?>
 
 	<label for="inputfirstname"></label>
-	<?php echo $this->Form->input('firstname', 'Prénom', array( 'placeholder' => 'Nom'));?>
+	<?php echo $this->Form->input('firstname', 'Prénom', array( 'placeholder' => 'Prénom'));?>
 
 	<label for="inputlastname"></label>
-	<?php echo $this->Form->input('lastname', 'Nom', array( 'placeholder' => 'Prénom')); ?>
+	<?php echo $this->Form->input('lastname', 'Nom', array( 'placeholder' => 'Nom')); ?>
+
+	<label for="inputaddress"></label>
+	<?php echo $this->Form->input('address', 'Adresse', array( 'placeholder' => 'Adresse')); ?>
 
 	<div class="form-actions">
 		<button type="submit" class="btn sendconnection">Envoyer</button>

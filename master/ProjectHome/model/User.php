@@ -5,12 +5,16 @@
 		var $validate = array(
 			'login' => array(
 				'rule' 		=> 'notEmpty',
-				'message' 	=> 'Vous devez préciser un titre.'
+				'message' 	=> 'Vous devez préciser un nom d\'utilisateur.'
 				),
 			'password' => array(
 				'rule' 		=> 'notEmpty',
-				'message' 	=> 'Vous devez préciser un titre.'
-				)
+				'message' 	=> 'Vous devez préciser un mot de passe.'
+				),
+			'address' => array(
+				'rule' 		=> 'notEmpty',
+				'message' 	=> 'Vous devez préciser une adresse.'
+				),
 			);
 
 		public function validates($data){

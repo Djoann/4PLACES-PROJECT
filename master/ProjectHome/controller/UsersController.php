@@ -40,7 +40,7 @@
 			else{
 				if($id === null){
 					$user = $this->User->findFirst(array(
-						'conditions'	=> array('rank' 	=> -1)
+						'conditions'	=> array('activated' 	=> -1)
 						));
 					
 					if(!empty($user)){
@@ -48,7 +48,7 @@
 					}
 					else{
 						$this->User->save(array(
-							'rank' => -1
+							'activated' => -1
 							));
 						$id = $this->User->id;
 					}
@@ -62,8 +62,9 @@
 						if($loginexist->login == $this->request->data->login){
 							$this->Session->setFlash('Ce nom d\'utilisateur est déjà pris.','error');
 							$this->request->data->password = '';
+							unset($this->request->data->address);
 						}else{
-							$this->request->data->rank = 'normal';
+							$this->request->data->activated = '0';
 							$this->request->data->password = sha1($this->request->data->password);
 							$this->User->save($this->request->data);
 							$id = $this->User->id;

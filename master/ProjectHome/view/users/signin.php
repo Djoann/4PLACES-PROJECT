@@ -11,11 +11,12 @@
 <form class="connection" action="<?php echo Router::url('users/signin/'); ?>" method="post">
 
 	<label for="inputlogin"></label>
-	<?php echo $this->Form->input('login', 'Nom d\'utilisateur'); ?>
+	<?php echo $this->Form->input('login', 'Nom d\'utilisateur', array('placeholder' => 'Nom d\'utilisateur')); ?>
 
 	<label for="inputpassword"></label>
 	<?php echo $this->Form->input('password', 'Mot de passe', array(
-		'type'	=> 'password'
+		'type'	=> 'password',
+		'placeholder' => 'Mot de passe'
 		)); ?>
 
 	<div class="form-actions">
