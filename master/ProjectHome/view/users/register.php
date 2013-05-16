@@ -73,7 +73,9 @@ function codeAddress() {
       //map.setView([lat ,  lng], 16);
       map.setView([lat ,  lng], 18);
       var marker =  L.marker([lat, lng]).addTo(map);
-
+      
+      $(".connection").html('<input id="lat-value" type="hidden" name="lat" value="'+lat+'" >')
+        
     } else {
       alert('Votre adresse est incorrecte' + status);
     }
