@@ -50,7 +50,7 @@
                         <!-- Auteur -->
                        <div class='annonce-author'>
                            <div class='annonce-author-image'>
-                               <a href="#autorprofile"><img alt="author" src="#" /></a>
+                               <a href="#autorprofile"><img alt="author" src="img/lea.jpg" /></a>
                            </div>
                            <div class='annonce-author-description'>
                                <h3>
@@ -135,7 +135,7 @@
   
   
   <div class='menuwrapper'>
-  <div class='street-logo'> <a href='/'> <img alt="street_logo" src="#" /> </a> </div>
+  <div class='street-logo'> <a href='/'> <img alt="street_logo" src="img/lea.jpg" /> </a> </div>
  
   <div class='street-navigation'>
     
@@ -144,7 +144,7 @@
         <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon hidden'>MapView</div></a> 
         <a class='addbox selected' href='#i' title='Announces listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
         <?php if (isset($_SESSION['User'])): ?>
-          <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userloc="<?php echo $_SESSION['User']->lat.' '.$_SESSION['User']->lng; ?>" >Home View</div></a>
+          <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userlat="<?php echo $_SESSION['User']->lat; ?>"  data-userlng=" <?php echo $_SESSION['User']->lng; ?>" >Home View</div></a>
         <?php endif ?>
       </nav> <!--  end menu quartier --> 
       
@@ -191,6 +191,7 @@ function initialize() {
 
 function codeAddress() {
   var address = document.getElementById('searchaddressbox').value;
+  console.log("yesss");
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
     
@@ -210,39 +211,30 @@ function codeAddress() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-/*  $('input#address').keypress(function(){
-       if($(this).keyCode == 13)
-       {
-           console.log("ok");
-           codeAddress();
-       }     
-    });
-*/
 
-
-function searchKeyPress(e)
+// Press enter submit location in searchbar
+$("input#searchaddressbox").keydown(function(e){
+    if (e.keyCode == 13 && !e.shiftKey)
     {
-       alert(e.keycode);
-    }
-    $('#searchaddressbox').bind('keypress', function(e){
-       var code = e.keyCode ? e.keyCode : e.which;
-       if(code == 13) // Enter key is pressed
-       {
-             codeAddress();
-       }
-    });
-  
-    
-    
+        codeAddress();
+    } else {
+    console.log("pas ok");
+}
+});  
 </script>
 
+
+
 <script> 
+// hide JS fade divs
          $("#my-home-bublebox").hide();
          $(".page-content").hide();
          $("#masterbublebox").hide();
 </script>
 
 <script> 
+
+// Fade In Annonce list onclick
 $(document).ready(function(){ 
   $(".addbox").click(function () {
       $("#my-home-bublebox").fadeOut(1000);
@@ -252,6 +244,7 @@ $(document).ready(function(){
   }); 
   
   
+  // Close Annonce List when click on button croix
   $(".leaflet-popup-close-button").click(function () { 
       console.log('hello');
       $(".display").fadeOut(1000);
@@ -263,7 +256,7 @@ $(document).ready(function(){
 
 <script>
             
-           
+           // SET MASTER MAP
            var map = L.map('map').setView([48.85522811385678, 2.3531341552734375 ], 13);
            L.tileLayer('http://{s}.tile.cloudmade.com/ffdd86e27a8a46129afb5e678456afaf/997/256/{z}/{x}/{y}.png', {
                attribution: 'Hello Place4Home',
@@ -310,10 +303,12 @@ $(document).ready(function(){
                    $("#masterbublebox").hide();
                    $("#my-home-bublebox").fadeIn(1000);
                    
-                   var userloc = $(this).data("userloc");
-                   console.log(userloc)
+                   var userlat = $(this).data("userlat");
+                   var userlng = $(this).data("userlng");
+                   console.log(userlat)
+                   console.log(userlng)
                    console.log("hello")
-                   map.setView([48.87552621826618, 2.31586754322052], 18);
+                   map.setView([userlat, userlng], 18);
             }) 
            
            

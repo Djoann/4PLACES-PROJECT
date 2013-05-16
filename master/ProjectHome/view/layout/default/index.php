@@ -43,10 +43,10 @@
           
           
             <!-- Annonce Title Search  -->
-            <form class="navbar-form search-area">
-              <input id="searchaddressbox" class="span2" type="text" placeholder="Search" value="Sydney, NSW">
+            <li id="searchlocation" class="navbar-form search-area">
+              <input id="searchaddressbox" class="span2" type="search" placeholder="Search" value="Sydney, NSW">
               <input type="button" value="Geocode" onclick="codeAddress()">
-            </form>
+            </li>
           </li>
         </ul>
       </div>
