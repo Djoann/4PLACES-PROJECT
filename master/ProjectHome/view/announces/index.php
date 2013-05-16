@@ -204,7 +204,7 @@ function codeAddress() {
       
 
     } else {
-      alert('Votre adresse est incorrecte' + status);
+      alert('Geocode was not successful for the following reason: ' + status);
     }
   });
 }
