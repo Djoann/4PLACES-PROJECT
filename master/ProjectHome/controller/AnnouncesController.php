@@ -90,6 +90,25 @@
 			$this->set($d);
 		}
 
+		function delete($id){
+			$this->loadModel('Announce');
+			$announce = $this->Announce->findFirst(array(
+				'conditions'	=> array(
+					'id'			=> $id,
+					'user_id'		=> $_SESSION['User']->id
+					)
+				));
+			if($_SESSION['User']->id == $announce->user_id){
+				$this->Announce->delete($id);
+				$this->redirect('users/'.$_SESSION['User']->id);
+				$this->Session->setFlash('L\'annonce bien été supprimée.');
+			}
+			else{
+				$this->Session->setFlash('Vous n\'avez pas la permission de supprimer cette annonce.');
+				$this->redirect('users/'.$_SESSION['User']->id);
+			}
+		}
+
 		function getAnnounces(){
 			$this->loadModel('Announce');
 			return $this->Announce->find();

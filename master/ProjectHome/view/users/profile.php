@@ -109,6 +109,7 @@
                        <!-- text annonce -->
                        <p class="bubletxt">
 			<?php echo $a->content; ?>
+      <a href="<?php echo Router::url('announces/delete/'.$a->id); ?>">Supprimer</a>
 			<?php foreach ($comments as $c): ?>
 				<?php if ($c->announce_id == $a->id): ?>
 					</p>
