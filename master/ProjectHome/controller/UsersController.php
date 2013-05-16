@@ -62,7 +62,6 @@
 						if($loginexist->login == $this->request->data->login){
 							$this->Session->setFlash('Ce nom d\'utilisateur est déjà pris.','error');
 							$this->request->data->password = '';
-							unset($this->request->data->address);
 						}else{
 							$this->request->data->activated = '0';
 							$this->request->data->password = sha1($this->request->data->password);
