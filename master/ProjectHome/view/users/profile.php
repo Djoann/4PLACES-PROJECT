@@ -103,13 +103,13 @@
 	<?php if ($a->user_id == $users->id): ?>
 		<div class="buble zoombox">
                 <div class="arrow"></div>
-                 <h3 href="#" class="buble-title"  data-lat="<?php echo $a->lat; ?>" data-lng="<?php echo $a->lng; ?>" ><?php echo $users->firstname.' '.$users->lastname; ?> - <?php echo $a->user_id; ?> <a href="#about" class="announce-comments">Read more</a> </h3></a>
+                 <h3 href="#" class="buble-title"  data-lat="<?php echo $a->lat; ?>" data-lng="<?php echo $a->lng; ?>" ><?php echo $users->firstname.' '.$users->lastname; ?> - <?php echo $a->user_id; ?> <a href="#about" class="announce-comments"> Read more </a> <a class="announce-comments" href="<?php echo Router::url('announces/delete/'.$a->id); ?>">Supprimer </a> </h3>
                 <div class="buble-content">
                     
                        <!-- text annonce -->
                        <p class="bubletxt">
 			<?php echo $a->content; ?>
-      <a href="<?php echo Router::url('announces/delete/'.$a->id); ?>">Supprimer</a>
+      
 			<?php foreach ($comments as $c): ?>
 				<?php if ($c->announce_id == $a->id): ?>
 					</p>

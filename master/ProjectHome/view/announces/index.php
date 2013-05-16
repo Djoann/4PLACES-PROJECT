@@ -217,6 +217,8 @@ $("input#searchaddressbox").keydown(function(e){
     if (e.keyCode == 13 && !e.shiftKey)
     {
         codeAddress();
+        $("#my-home-bublebox").hide();
+        
     } else {
     console.log("pas ok");
 }
