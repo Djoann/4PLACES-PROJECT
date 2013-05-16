@@ -5,6 +5,8 @@
 
 <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--  GEOCODER -->    
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
 
 <section class='street-header'>   <!-- begin section -->
@@ -180,6 +182,60 @@
 
 <!-- SCRIPTS -->
 
+<script>
+var geocoder;
+
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+}  
+
+function codeAddress() {
+  var address = document.getElementById('searchaddressbox').value;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+    
+      console.log(results[0].geometry.location.jb);
+      console.log(results[0].geometry.location.kb);
+      // end interesting function
+      var lat = results[0].geometry.location.jb;
+      var lng = results[0].geometry.location.kb;
+      map.setView([lat ,  lng], 16);
+      
+
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+/*  $('input#address').keypress(function(){
+       if($(this).keyCode == 13)
+       {
+           console.log("ok");
+           codeAddress();
+       }     
+    });
+*/
+
+
+function searchKeyPress(e)
+    {
+       alert(e.keycode);
+    }
+    $('#searchaddressbox').bind('keypress', function(e){
+       var code = e.keyCode ? e.keyCode : e.which;
+       if(code == 13) // Enter key is pressed
+       {
+             codeAddress();
+       }
+    });
+  
+    
+    
+</script>
+
 <script> 
          $("#my-home-bublebox").hide();
          $(".page-content").hide();
@@ -206,11 +262,15 @@ $(document).ready(function(){
 </script>
 
 <script>
+            
+           
            var map = L.map('map').setView([48.85522811385678, 2.3531341552734375 ], 13);
            L.tileLayer('http://{s}.tile.cloudmade.com/ffdd86e27a8a46129afb5e678456afaf/997/256/{z}/{x}/{y}.png', {
                attribution: 'Hello Place4Home',
                maxZoom: 18
            }).addTo(map);
+           
+           		
            
    
 /*           

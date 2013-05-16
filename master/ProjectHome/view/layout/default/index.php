@@ -44,8 +44,8 @@
           
             <!-- Annonce Title Search  -->
             <form class="navbar-form search-area">
-              <input class="span2" type="text" placeholder="Search">
-              
+              <input id="searchaddressbox" class="span2" type="text" placeholder="Search" value="Sydney, NSW">
+              <input type="button" value="Geocode" onclick="codeAddress()">
             </form>
           </li>
         </ul>
