@@ -32,7 +32,7 @@
         
         	<label for="inputaddress"></label>
         	<?php echo $this->Form->input('address', 'Adresse', array( 'placeholder' => 'Adresse')); ?>
-        	<input type="button" value="Geocode" onclick="codeAddress()">
+        	<input id="geocode-pull" type="button" value="Geocode" onclick="codeAddress()">
         
         	<div class="form-actions">
         		<button type="submit" class="btn sendconnection">Envoyer</button>

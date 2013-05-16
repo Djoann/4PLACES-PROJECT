@@ -8,6 +8,19 @@ body {
 
 /*     REGISTER MAP */
 
+#geocode-pull {
+    background: -webkit-linear-gradient(bottom, #d14444 0%, #C42F2F 100%);
+    border: 1px solid #253737;
+    border-radius: 4px;
+    width: 138px;
+    height: 20px;
+    color: #fff;
+    padding: 0.125em 0.6875em 0.25em 0.6875em;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+
 #map .leaflet-container {
     position: relative;
     float: left;
@@ -42,7 +55,7 @@ body {
     z-index: 50;
     margin-right:auto;
     width: 343px;
-    height: 380px;
+    height: 480px;
     padding:30px;
     border: 1px solid rgba(0,0,0,.2);
     -moz-border-radius: 5px;
@@ -59,12 +72,7 @@ body {
 }
 
 
-
-<<<<<<< HEAD
 #inputlastname , #inputfirstname , #inputpassword , #inputlogin , #inputaddress {
-=======
-#inputlastname , #inputfirstname , #inputpassword , #inputlogin {
->>>>>>> 880f5a767db439f6dc2af9b0bebff3badb8db111
     width: 276px;
     height: 48px;
     border: 1px solid rgba(255,255,255,.4);
