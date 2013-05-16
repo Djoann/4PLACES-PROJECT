@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 15 Mai 2013 à 22:03
+-- Généré le: Jeu 16 Mai 2013 à 13:19
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `announce` (
   KEY `fk_announce_category1_idx` (`category_id`),
   KEY `fk_announce_user1_idx` (`user_id`),
   KEY `Lat` (`lat`,`lng`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=66 ;
 
 --
 -- Contenu de la table `announce`
@@ -80,8 +80,14 @@ INSERT INTO `announce` (`id`, `content`, `type`, `created`, `address`, `lat`, `l
 (44, 'zrgzrvzrsvrzsv', 'asking', '2013-05-14 11:27:00', '', 48.85116185716921, 2.3184585571289062, 0, NULL, 0),
 (45, 'zrsvzrsvsebetb', 'asking', '2013-05-14 11:27:11', '', 48.843819168321446, 2.3447227478027344, 0, NULL, 0),
 (46, 'salut monsieur', 'asking', '2013-05-14 11:29:55', '', 48.84686933903632, 2.3293590545654297, 0, NULL, 0),
-(47, 'gbfvdcs', 'asking', '2013-05-14 10:47:21', NULL, 48.865053537403895, 2.3378562927246094, 0, NULL, 1),
-(48, 'gfvdcs', 'asking', '2013-05-14 10:47:26', NULL, 48.85680934671159, 2.3047256469726562, 0, NULL, 1);
+(58, 'gtrf', 'asking', '2013-05-16 09:51:33', NULL, 48.869005749964536, 2.3895263671875, 0, NULL, 1),
+(57, 'trgf', 'asking', '2013-05-16 09:51:31', NULL, 48.8573740606269, 2.3012924194335938, 0, NULL, 1),
+(56, 'ytgrfe', 'asking', '2013-05-16 09:51:30', NULL, 48.86697322249135, 2.328929901123047, 0, NULL, 1),
+(61, 'trgfe', 'asking', '2013-05-16 09:51:39', NULL, 48.83658839192869, 2.3009490966796875, 0, NULL, 1),
+(62, 'tgrf', 'asking', '2013-05-16 09:51:42', NULL, 48.87453832314776, 2.3011207580566406, 0, NULL, 1),
+(63, 'tgrfe', 'asking', '2013-05-16 09:51:44', NULL, 48.87769951885709, 2.347126007080078, 0, NULL, 1),
+(64, 'tgre', 'asking', '2013-05-16 09:51:47', NULL, 48.85872934803138, 2.381458282470703, 0, NULL, 1),
+(65, 'tgrfe', 'asking', '2013-05-16 09:51:49', NULL, 48.87871557505334, 2.3230934143066406, 0, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -216,12 +222,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) DEFAULT NULL,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
-  `street_number` int(11) DEFAULT NULL,
-  `street` varchar(255) DEFAULT NULL,
-  `zip` int(11) DEFAULT NULL,
-  `city` varchar(255) DEFAULT NULL,
-  `state` varchar(255) DEFAULT NULL,
-  `country` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
   `lat` double NOT NULL,
   `lng` double NOT NULL,
   `bio` text,
@@ -232,14 +233,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `media_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_user_media_idx` (`media_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id`, `login`, `password`, `firstname`, `lastname`, `street_number`, `street`, `zip`, `city`, `state`, `country`, `lat`, `lng`, `bio`, `mail`, `token`, `online`, `activated`, `media_id`) VALUES
-(1, 'djoan', '8aa61d8bd260942521bb1ba82cd4cce2324fdbee', 'Djoan', 'Fal', 42, 'rue miromesnil', 75000, 'Paris', NULL, 'France', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `login`, `password`, `firstname`, `lastname`, `address`, `lat`, `lng`, `bio`, `mail`, `token`, `online`, `activated`, `media_id`) VALUES
+(1, 'djoan', '8aa61d8bd260942521bb1ba82cd4cce2324fdbee', 'Djoan', 'Fal', 'France', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, -1, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
