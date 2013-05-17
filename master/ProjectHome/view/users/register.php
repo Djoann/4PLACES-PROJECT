@@ -34,9 +34,12 @@
         	<label for="inputaddress"></label>
         	<?php echo $this->Form->input('address', 'Adresse', array( 'placeholder' => 'Adresse')); ?>
         	<input id="geocode-pull" type="button" value="Geocode" onclick="codeAddress()">
-        
+        	
+        	<input id="lat-value" type="hidden" name="lat" value="" >
+            <input id="lng-value" type="hidden" name="lng" value="" >
+            
         	<div class="form-actions">
-        		<button type="submit" class="btn sendconnection">Envoyer</button>
+        		<button type="submit" class="btn sendconnection" onclick="inputlatlng()" >Envoyer</button>
         	</div>
         
         </form>
@@ -60,27 +63,29 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 function codeAddress() {
   var address = document.getElementById('inputaddress').value;
-  console.log("hello");
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      console.log(results[0].geometry.location.jb);
-      console.log(results[0].geometry.location.kb);
+      //console.log(results[0].geometry.location.jb);
+      //console.log(results[0].geometry.location.kb);
       
       // end interesting function
       var lat = results[0].geometry.location.jb;
       var lng = results[0].geometry.location.kb;
       
+      $("#lat-value").val(results[0].geometry.location.jb);
+      $("#lng-value").val(results[0].geometry.location.kb);
+      
       //map.setView([lat ,  lng], 16);
       map.setView([lat ,  lng], 18);
       var marker =  L.marker([lat, lng]).addTo(map);
       
-      $(".connection").html('<input id="lat-value" type="hidden" name="lat" value="'+lat+'" >')
         
     } else {
       alert('Votre adresse est incorrecte' + status);
     }
   });
 }
+
 
 
 var map = L.map('map').setView([48.85522811385678, 2.3531341552734375 ], 13);
