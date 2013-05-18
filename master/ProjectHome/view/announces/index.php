@@ -45,16 +45,41 @@
           <!-- ZOOM bublebox // annonce --> 
               
               <div class="buble zoombox">
-                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> <?php echo $v->title; ?> - 
+                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> <?php echo $v->title; ?></a> - <a href="#id-profile" id="id-profile">
                  <?php
                  foreach($users as $u){
                      if($u->id == $v->user_id){
                          echo $u->firstname .' '. $u->lastname;
                      }
-                 } ?></a><a href="#about" class="announce-comments"> Read more </a></h3>
+                 } ?></a></h3>
                 <div class="buble-content">
                        <!-- text annonce -->
+                       
+                       <div id="read-com" class="page-header">
                        <p class="bubletxt"><?php echo $v->content; ?></p>
+                       	<h3>Commenter</h3>
+                       
+                       <form class="form-horizontal" action="<?php echo Router::url('announces/post/'); ?>" method="post">
+                       	
+                       	<?php echo $this->Form->input('id','hidden'); ?>
+                       	<?php echo $this->Form->input('announce_id','hidden'); ?>
+                       	<?php echo $this->Form->input('user_id', 'hidden'); ?>
+                       	<label for="inputcontent"></label>
+                       	<?php echo $this->Form->input('content','Contenu',array(
+                       		'type' => 'textarea',
+                       		'class' => 'input-xxlarge wysiwyg',
+                       		'rows'	=> 10
+                       	)); ?>
+                       
+                       	<div class="form-actions">
+                       		<button type="submit" class="btn btn-primary send-com">Envoyer</button>
+                       	</div>
+                       
+                       </form>
+                       
+                       
+                       </div> <!-- end read com -->
+                       
                        <div class='item-image'>
   
                        </div>
@@ -66,7 +91,7 @@
                            <div class='annonce-author-description'>
                                <h3>
                                Adresse : 
-                               <a href="<?php echo Router::url("announces/view/id:{$v->id}"); ?>" id="annonce_author_link"><?php echo $v->address; ?></a>
+                               <a href="<?php echo Router::url("announces/view/id:{$v->id}"); ?>" id="annonce_author_link"><?php echo $v->address; ?> <!-- PHP User adress --></a>
                                </h3>
                             </div>
                         </div>
@@ -75,17 +100,12 @@
                         <!-- infos Annonce time vues -->
                        <ul class='buble-info'>
                            <li class='icon-with-text-container'>
-                               <i class='ss-calendar icon-part'></i>
                                <div class='text-part'>
                                    Created 22 hours ago
                                </div>
                            </li>
                            <li class='icon-with-text-container'>
-                               <i class='ss-view icon-part'></i>
-                               <div class='text-part'>
-                                   Viewed
-                                   47 times
-                               </div>
+                                   <a href="#about" class="announce-comments"> Read more </a>
                            </li>
                        </ul>
                        
@@ -102,7 +122,8 @@
       <!-- HOME buble box -->
           <div id="my-home-bublebox">
               <div  class="buble zoombox" id="infos-home-user">
-                  42 rue Miro
+                  42  <?php echo $_SESSION['User']->lat; ?> <?php echo $_SESSION['User']->lng; ?>
+                  
               </div>
           
           </div> <!-- END HOME buble box -->
@@ -152,10 +173,10 @@
     
       <!--   menu quartier --> 
       <nav class='street-actions actions-menu'> 
-        <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon hidden'>MapView</div></a> 
-        <a class='addbox selected' href='#i' title='Announces listing'><div class='text-with-icon hidden'>Annonces List</div></a> 
+        <a class='first-child' href='#' title='Annonce Map'><div id="geo-home" class='text-with-icon'>MapView</div></a> 
+        <a class='addbox selected' href='#i' title='Announces listing'><div class='text-with-icon'>Annonces List</div></a> 
         <?php if (isset($_SESSION['User'])): ?>
-          <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon hidden' data-userlat="<?php echo $_SESSION['User']->lat; ?>"  data-userlng=" <?php echo $_SESSION['User']->lng; ?>" >Home View</div></a>
+          <a class='' href='#homespace' title='Community'><div id="my-home" class='text-with-icon' data-userlat="<?php echo $_SESSION['User']->lat; ?>"  data-userlng=" <?php echo $_SESSION['User']->lng; ?>" >Home View</div></a>
         <?php endif ?>
       </nav> <!--  end menu quartier --> 
       
@@ -253,7 +274,6 @@ $(document).ready(function(){
       $("#my-home-bublebox").fadeOut(1000);
       $(this).addClass("on");
       $("#masterbublebox").addClass("display");
-      $(".bubletxt").hide();
       $(".display").fadeIn(1000);
   }); 
   
@@ -298,27 +318,31 @@ $(document).ready(function(){
            map.on('click', onMapClick);
            */
            
+           var userlat = $("#my-home").data("userlat");
+           var userlng = $("#my-home").data("userlng");
+           
            // Click Set new view from announce local
            $(".geo-announce").click( function () {
                var lat = $(this).data("lat");
                var lng = $(this).data("lng");
                console.log(lat , lng);
-               map.setView([lat ,  lng], 18);
+               map.setView([lat ,  lng], 16);
            }) 
            
            // Replace view at central Paris
            $("#geo-home").click( function () {
                $("#my-home-bublebox").hide();
-               map.setView([48.85522811385678, 2.3531341552734375], 13);
+               map.setView([userlat, userlng], 13);
            }) 
            
            // Place view at user ID home adress
            $("#my-home").click( function () {
                    $("#masterbublebox").hide();
                    $("#my-home-bublebox").fadeIn(1000);
+                   $(".buble").removeClass("displayed");
+                   $(".com-visible").removeClass("com-visible");
+                   //.css('display','none');
                    
-                   var userlat = $(this).data("userlat");
-                   var userlng = $(this).data("userlng");
                    console.log(userlat)
                    console.log(userlng)
                    
@@ -329,10 +353,10 @@ $(document).ready(function(){
            
            //EVENT AFFICHER UNE ANNONCES 
            $("#masterbublebox h3").each( function () {
+                   //$(this).children().addClass("hello")
                    var e = $(this);
                    var lat = e.attr("data-lat");
                    var lng = e.attr("data-lng");
-                   console.log(lat, lng);
                    if (lat && lng) {
                        var marker = L.marker([lat, lng]).bindPopup(e.html()).addTo(map);
                        marker.on("click", function () { marker.openPopup()})
@@ -362,13 +386,18 @@ $(document).ready(function(){
            
        // Extend annonces
        $(".announce-comments").click( function () {
-           $(this).parent().parent().addClass("displayed");
+           $(this).parent().parent().parent().parent().addClass("displayed");
            //$(".displayed1").parent(".zoombox").addClass("displayed");
-           $(".displayed").children().children("p").fadeIn(1000);          
+           $(".displayed").children().children("div").addClass("com-visible");          
            //var php_more = "<?php echo $v->content; ?>";
            //$(".buble-content").html('<p class="bubletxt">'+ php_more +'</p>');
-           console.log("read more");
        });
+       
+       //User announce click = Add friend
+       $("#id-profile").click( function () {
+           alert("Add profile friend")
+       });
+       
        
    </script>
 

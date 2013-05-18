@@ -10,6 +10,32 @@ background-color: #f0f0f0;
     height: auto !important;
 }
 
+.com-visible {
+    display: block !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.infos-left {
+height: 275px !important;
+}
+
+#read-com {
+    display: none;
+    margin: 10px;
+}
+
+.wysiwyg {
+    width: 97% !important;
+}
+
+.send-com {
+    display: block;
+    position: relative;
+    float: right;
+}
 
 .bublebox p {
 margin: 10px 10px 10px 10px;
@@ -36,7 +62,7 @@ margin-left: 20%;
 
 
 .buble {
-height: 150px;
+height: 135px;
 margin: 10px;
 position: relative;
 top: 0px;

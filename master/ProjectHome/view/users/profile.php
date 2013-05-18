@@ -40,11 +40,11 @@
       <!--   menu quartier --> 
       <nav class='street-actions actions-menu'> 
       
-        <a class='first-child selected' href='membre.html' title='Home'> <i class='#'></i><div class='text-with-icon hidden'>Home</div></a> 
+        <a class='first-child selected' href='membre.html' title='Home'> <i class='#'></i><div class='text-with-icon'>Home</div></a> 
         
-        <a class='' href='#i' title='New listing'> <i class='#'></i><div class='text-with-icon hidden'>New Annonces</div></a> 
+        <a class='' href='#i' title='New listing'> <i class='#'></i><div class='text-with-icon'>New Annonces</div></a> 
         
-        <a class='' href='#' title='Community'> <i class='#'></i><div class='text-with-icon hidden'>Voisinage</div></a>
+        <a class='' href='#' title='Community'> <i class='#'></i><div class='text-with-icon'>Voisinage</div></a>
       </nav> <!--  end menu quartier --> 
       
     </div>
@@ -74,8 +74,7 @@
                <!-- text annonce -->
                <p class="bubletxt"> 
                    BIO :
-                   <h1><?php echo $users->firstname; ?>
-                   <?php echo $users->lastname; ?></h1>
+                   <h1>BLABLA2</h1>
                
                
                </p>
