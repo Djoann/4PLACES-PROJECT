@@ -167,7 +167,7 @@
   
   
   <div class='menuwrapper'>
-  <div class='street-logo'> <a href='/'> <img alt="street_logo" src="img/lea.jpg" /> </a> </div>
+  <div class='street-logo'> <a href='#'> <img alt="street_logo" src="img/lea.jpg" /> </a> </div>
  
   <div class='street-navigation'>
     
