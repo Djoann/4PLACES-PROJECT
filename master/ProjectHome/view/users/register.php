@@ -32,8 +32,7 @@
         	<?php echo $this->Form->input('lastname', 'Nom', array( 'placeholder' => 'Nom')); ?>
         
         	<label for="inputaddress"></label>
-        	<?php echo $this->Form->input('address', 'Adresse', array( 'placeholder' => 'Adresse')); ?>
-        	<input id="geocode-pull" type="button" value="Geocode" onclick="codeAddress()">
+        	<?php echo $this->Form->input('address', 'Adresse', array( 'placeholder' => 'Adresse' , 'onchange' => 'codeAddress()')); ?>
         	
         	<input id="lat-value" type="hidden" name="lat" value="" >
             <input id="lng-value" type="hidden" name="lng" value="" >
@@ -81,7 +80,7 @@ function codeAddress() {
       
         
     } else {
-      alert('Votre adresse est incorrecte' + status);
+      alert('Votre adresse est incorrecte : ' + status);
     }
   });
 }

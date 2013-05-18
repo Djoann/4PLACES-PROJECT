@@ -6,6 +6,10 @@ color: #333333;
 background-color: #f0f0f0;
 }
 
+.displayed {
+    height: auto !important;
+}
+
 
 .bublebox p {
 margin: 10px 10px 10px 10px;
@@ -32,6 +36,7 @@ margin-left: 20%;
 
 
 .buble {
+height: 150px;
 margin: 10px;
 position: relative;
 top: 0px;
@@ -140,7 +145,6 @@ height: 66px;
 padding: 0.3125em 0.3125em 0.3125em 0.3125em;
 background: white;
 position: absolute;
-top: 90px;
 left: 10px;
 -webkit-border-radius: 0.3125em;
 -moz-border-radius: 0.3125em;

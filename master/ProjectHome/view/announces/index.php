@@ -22,8 +22,11 @@
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['User']->id; ?>">                
                         <a href="#"><button type="submit">Poster l'annonce !</button></a>
                         <label for="inputcontent"></label>
+                        <input type="text" id="titlevalue" name="title" value="" placeholder="Titre"/>
                         <textarea id="inputcontent" name="content" rows="10" placeholder="Annonce"></textarea>
-                        <div class="coords"></div>             
+                        <div class="coords"></div>   
+                        <script type="text/javascript">//vérifier que title est bien remplis
+                        </script>          
        </form>
   
   </div> <!-- END FORM -->
@@ -33,14 +36,22 @@
   
     <div id="masterbublebox"><!-- master buble box -->  
             <a class="leaflet-popup-close-button" href="#close">×</a>
-        
+                
+                <?php $users = $this->request('Users','admin_getUsers'); ?>
+                
                 <?php foreach ($announces as $k => $v): ?> 
                 <!-- ZOOM bublebox CHAQUE annonce --> 
             
           <!-- ZOOM bublebox // annonce --> 
               
               <div class="buble zoombox">
-                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> Title - user ID <?php echo $v->user_id; ?></a></h3>
+                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> <?php echo $v->title; ?> - 
+                 <?php
+                 foreach($users as $u){
+                     if($u->id == $v->user_id){
+                         echo $u->firstname .' '. $u->lastname;
+                     }
+                 } ?></a><a href="#about" class="announce-comments"> Read more </a></h3>
                 <div class="buble-content">
                        <!-- text annonce -->
                        <p class="bubletxt"><?php echo $v->content; ?></p>
@@ -242,6 +253,7 @@ $(document).ready(function(){
       $("#my-home-bublebox").fadeOut(1000);
       $(this).addClass("on");
       $("#masterbublebox").addClass("display");
+      $(".bubletxt").hide();
       $(".display").fadeIn(1000);
   }); 
   
@@ -309,7 +321,8 @@ $(document).ready(function(){
                    var userlng = $(this).data("userlng");
                    console.log(userlat)
                    console.log(userlng)
-                   console.log("hello")
+                   
+                   L.marker([userlat, userlng]).addTo(map)
                    map.setView([userlat, userlng], 18);
             }) 
            
@@ -345,6 +358,18 @@ $(document).ready(function(){
            }
            
            map.on('click', onMapClick);
+           
+           
+       // Extend annonces
+       $(".announce-comments").click( function () {
+           $(this).parent().parent().addClass("displayed");
+           //$(".displayed1").parent(".zoombox").addClass("displayed");
+           $(".displayed").children().children("p").fadeIn(1000);          
+           //var php_more = "<?php echo $v->content; ?>";
+           //$(".buble-content").html('<p class="bubletxt">'+ php_more +'</p>');
+           console.log("read more");
+       });
+       
    </script>
 
 
