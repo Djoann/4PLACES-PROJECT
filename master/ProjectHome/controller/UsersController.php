@@ -95,8 +95,6 @@
 						'id' 	=> $id
 						)
 				));
-			$d['users']->address = $d['users']->street_number.' '.$d['users']->street.', '.$d['users']->zip.', '.$d['users']->city;
-
 			if(empty($d['users'])){
 				$this->e404('L\'utilisateur n\'existe pas ou plus.');
 			}
@@ -112,13 +110,6 @@
 		function admin_getUsers(){
 			$this->loadModel('User');
 			return $this->User->find();
-		}
-
-		function admin_getFirstname(){
-			$this->loadModel('User');
-			return $this->User->find(array(
-				'fields'			=>  'firstname'
-				));
 		}
 
 	}

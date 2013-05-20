@@ -37,7 +37,11 @@
     <div id="masterbublebox"><!-- master buble box -->  
             <a class="leaflet-popup-close-button" href="#close">×</a>
                 
-                <?php $users = $this->request('Users','admin_getUsers'); ?>
+                <?php
+                  $users = $this->request('Users','admin_getUsers');
+                  $medias = $this->request('Medias', 'admin_getImg');
+                  $comments = $this->request('Comments', 'getCom');
+                ?>
                 
                 <?php foreach ($announces as $k => $v): ?> 
                 <!-- ZOOM bublebox CHAQUE annonce --> 
@@ -49,44 +53,41 @@
                  <?php
                  foreach($users as $u){
                      if($u->id == $v->user_id){
-                         echo $u->firstname .' '. $u->lastname;
+                        echo $u->firstname .' '. $u->lastname;
+                        $media = $u->media_id;
                      }
                  } ?></a></h3>
                 <div class="buble-content">
-                       <!-- text annonce -->
-                       
-                       <div id="read-com" class="page-header">
-                       <p class="bubletxt"><?php echo $v->content; ?></p>
-                       	<h3>Commenter</h3>
-                       
-                       <form class="form-horizontal" action="<?php echo Router::url('announces/post/'); ?>" method="post">
-                       	
-                       	<?php echo $this->Form->input('id','hidden'); ?>
-                       	<?php echo $this->Form->input('announce_id','hidden'); ?>
-                       	<?php echo $this->Form->input('user_id', 'hidden'); ?>
-                       	<label for="inputcontent"></label>
-                       	<?php echo $this->Form->input('content','Contenu',array(
-                       		'type' => 'textarea',
-                       		'class' => 'input-xxlarge wysiwyg',
-                       		'rows'	=> 10
-                       	)); ?>
-                       
-                       	<div class="form-actions">
-                       		<button type="submit" class="btn btn-primary send-com">Envoyer</button>
-                       	</div>
-                       
-                       </form>
-                       
-                       
-                       </div> <!-- end read com -->
-                       
-                       <div class='item-image'>
-  
-                       </div>
+                  <!-- text annonce -->
+                  <div id="read-com" class="page-header">
+                    <p class="bubletxt"><?php echo $v->content; ?></p>
+                    <ul>
+                      <?php foreach ($comments as $c): ?>
+                        <?php if ($v->id == $c->announce_id): ?>
+                          <?php if ($_SESSION['User']->id == $c->user_id): ?>
+                            <li><?php echo $c->content ?></li>
+                          <?php endif ?>
+                        <?php endif ?>
+                      <?php endforeach ?>
+                    </ul>
+                    <?php require(ROOT.DS.'view'.DS.'comments'.DS.'index.php') ?>
+                  </div> <!-- end read com -->
+                  <div class='item-image'>
+                </div>
                         <!-- Auteur -->
                        <div class='annonce-author'>
                            <div class='annonce-author-image'>
-                               <a href="#autorprofile"><img alt="author" src="img/lea.jpg" /></a>
+                              <a href="#autorprofile">
+                                <?php if ($media === null){ ?>
+                                  <img alt="author" src="http://www.illunik.fr/img/anonymous.png"/>
+                                <?php }else{ ?>
+                                  <?php foreach ($medias as $m): ?>
+                                    <?php if ($m->id == $media): ?>
+                                      <img alt="author" src="<?php $m->file ?>" />
+                                    <?php endif ?>
+                                  <?php endforeach ?>
+                                <?php } ?>
+                              </a>
                            </div>
                            <div class='annonce-author-description'>
                                <h3>

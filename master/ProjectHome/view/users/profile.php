@@ -1,3 +1,9 @@
+<?php 
+  $announces = $this->request('Announces', 'getAnnounces');
+  $user = $this->request('Users','admin_getUsers');
+  $comments = $this->request('Comments','getCom');
+  $medias = $this->request('Medias','admin_getImg')
+?>
 <style>
 .coverimage {
     position: relative;
@@ -25,7 +31,20 @@
   <!--  MAP ZONE == 0 -->
   
           <div class='wrapper'>
-          <div class='street-logo'> <a href='#'> <img alt="User_logo" src="assets/img/louve.jpg" /> </a> </div>
+          <div class='street-logo'>
+            <a href='#'>
+              <?php if ($users->media_id === null){ ?>
+                <img alt="User_logo" src="http://www.illunik.fr/img/anonymous.png" width="150px" />
+              <?php }else{ ?>
+                <?php foreach ($medias as $m): ?>
+                  <?php if ($m->id == $users->media_id){ ?>
+                    <img alt="User_logo" src="<?php echo $m->file ?>" width="150px" />
+                  <?php } ?>
+                <?php endforeach ?>
+              <?php } ?>
+              
+            </a>
+          </div>
           <div class='street-intro'>
             <div class='intro-wrapper'>
               <h1><?php echo $users->firstname; ?>
@@ -54,11 +73,7 @@
 
 <section id="profile-infos">
 
-<?php 
-	$announces = $this->request('Announces', 'getAnnounces');
-	$user = $this->request('Users','admin_getUsers');
-	$comments = $this->request('Comments','getCom');
-?>
+
 
 
 <div id="profil-infobox">
@@ -83,9 +98,7 @@
 				<li class='icon-with-text-container'>
 					<i class='ss-calendar icon-part'></i>
 					<div class='text-part'>
-                               	<?php echo $users->address; ?>
-
-
+            <?php echo $users->address; ?>
 					</div>
 				</li>
 			</ul>

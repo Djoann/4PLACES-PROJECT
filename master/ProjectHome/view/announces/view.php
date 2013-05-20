@@ -1,7 +1,7 @@
 <?php
 
 	$title_for_layout = 'Annonce #'.$announce->id;
-	$users = $this->request('Users','getUsers');
+	$users = $this->request('Users','admin_getUsers');
 	$comments = $this->request('Comments','getCom');
 
 ?>
@@ -31,4 +31,4 @@
 
 <?php endforeach ?>
 
-<?php require_once(ROOT.DS.'view'.DS.'comments'.DS.'answer.php'); ?>
+<?php require_once(ROOT.DS.'view'.DS.'comments'.DS.'index.php'); ?>
