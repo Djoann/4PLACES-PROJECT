@@ -50,7 +50,7 @@
               <h1><?php echo $users->firstname; ?>
               <?php echo $users->lastname; ?></h1>
               <p> Je m'appelle <?php echo $users->firstname; ?>
-              <?php echo $users->lastname; ?> 23 ans, je vie avec mes parents et mon grand frère 015463829</p>
+              <?php echo $users->lastname; ?> BIOBIOBIOBIOBIO</p>
             </div>
           </div>
           
@@ -115,7 +115,7 @@
 	<?php if ($a->user_id == $users->id): ?>
 		<div class="buble zoombox">
                 <div class="arrow"></div>
-                 <h3 href="#" class="buble-title"  data-lat="<?php echo $a->lat; ?>" data-lng="<?php echo $a->lng; ?>" ><?php echo $users->firstname.' '.$users->lastname; ?> - <?php echo $a->user_id; ?> <a href="#about" class="announce-comments"> Read more </a> <a class="announce-comments" href="<?php echo Router::url('announces/delete/'.$a->id); ?>">Supprimer </a> </h3>
+                 <h3 href="#" class="buble-title"  data-lat="<?php echo $a->lat; ?>" data-lng="<?php echo $a->lng; ?>" ><?php echo $users->firstname.' '.$users->lastname; ?> - <?php echo $a->user_id; ?> <a class="announce-delete" href="<?php echo Router::url('announces/delete/'.$a->id); ?>">Supprimer </a> </h3>
                 <div class="buble-content">
                     
                        <!-- text annonce -->

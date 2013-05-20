@@ -55,6 +55,11 @@ float: left;
 }
 
 
+.announce-delete {
+    float: right;
+}
+
+
 /*******    END PROFILE BOX ***/
 
 #masterbublebox {
@@ -75,11 +80,6 @@ float: left;
 
 
 /*TOP NAV BAR */
-.search-area {
-float: left;
-width: 400px;
-margin-left: 40%;
-}
 
 
 

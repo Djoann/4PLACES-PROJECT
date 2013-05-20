@@ -2,10 +2,7 @@
 <html lang="fr">
 <meta charset='utf-8'>
 <title>Place4home - Consulter les annonces</title>
-<meta content='#/homepage' property='og:url'>
-<meta content='website' property='og:type'>
-<meta content='#/images/communities/logos/501/header/miromesnil_logo.png' property='og:image'>
-<meta content='adminnameid' property='fb:admins'>
+<meta content='announce-website' property='og:type'>
 <meta content='Place 4Voisinage Miromesnil' property='og:title'>
 <meta content='Place4 Voisinage Miromesnil' property='og:site_name'>
 <meta content='Site annonces entre voisins' property='og:description'>
@@ -45,7 +42,7 @@
             <!-- Annonce Title Search  -->
             <li id="searchlocation" class="navbar-form search-area">
               <input id="searchaddressbox" class="span2" type="search" placeholder="Search" value="Sydney, NSW">
-              <input type="button" value="Geocode" onclick="codeAddress()">
+              <!-- <input type="button" value="Geocode" onclick="codeAddress()"> -->
             </li>
           </li>
         </ul>
