@@ -369,6 +369,6 @@ text-align: center;
 cursor: pointer;
 padding: 0.125em 0.6875em 0.25em 0.6875em;
 display: inline-block;
-float: left;
+float: right;
 }
 
