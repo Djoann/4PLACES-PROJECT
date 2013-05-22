@@ -107,6 +107,20 @@
 			$this->redirect('');
 		}
 
+		function admin_delete($id){
+			$this->loadModel('User');
+			$this->User->delete($id);
+			$this->Session->setFlash('L\'utilisateur a bien été supprimée.');
+			$this->redirect('admin/');
+		}
+
+		function admin_index(){
+			$this->loadModel('User');
+			$conditions = array('activated'	=> '0');
+			$d['users'] = $this->User->find($conditions);
+			$this->set($d);
+		}
+
 		function admin_getUsers(){
 			$this->loadModel('User');
 			return $this->User->find();

@@ -20,7 +20,7 @@
 		<p class="muted credit">
 			<?php
 
-				echo 'Page générée en : <span style="color: #0088cc;">'.round(microtime(true) - $debut,5).' secondes</span>.';
+				echo 'Page générée en : <span style="color: #0088cc;">'.round(microtime(true) - $debut,5).' secondes</span>.<br><a href="'.Router::url('admin/').'">Panneau d\'administration</a>';
 
 			?>
 		</p>
