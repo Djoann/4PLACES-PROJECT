@@ -2,3 +2,42 @@
 color:red;
 }
 
+.navbar-inner {
+	min-height:70px;
+}
+
+#header .brand {
+	margin-left:25%;
+}
+
+.menuli {
+	margin-left: 30px;
+}
+
+.search-area {
+	visibility:hidden;
+}
+
+#map {
+	visibility:hidden;
+}
+
+.buble {
+	margin:10px 0px 10px 0px
+}
+
+#masterbublebox {
+	width:100%;
+	margin-top: 2.5em;
+}
+
+.menuwrapper {
+	visibility:hidden;
+}
+
+.nav {
+	margin-left:11%;
+}
+.display {
+	margin-left:0
+}

@@ -8,7 +8,7 @@
 	<h2>Se Connecter</h2>
 </div>
 
-<form class="connection" action="<?php echo Router::url('users/signin/'); ?>" method="post">
+<form class="connection2" action="<?php echo Router::url('users/signin/'); ?>" method="post">
 
 	<label for="inputlogin"></label>
 	<?php echo $this->Form->input('login', 'Nom d\'utilisateur', array('placeholder' => 'Nom d\'utilisateur')); ?>

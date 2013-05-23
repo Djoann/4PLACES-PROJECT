@@ -1,18 +1,16 @@
-.connection {
-	margin-left:3%;
-	width:270px;
-	height:390px;
+.connection2 {
+	width:280px;
+	
 }
 
 #inputlastname , #inputfirstname , #inputpassword , #inputlogin , #inputaddress {
 margin-left:-1px;
+width:100%;
 }
 
-.sendconnection {
-margin-right:24%;
-}
 
 .test-geocoding-map {
-	width:350px;
+	width:45%;
 	height:450px;
+	margin-left:3%;
 }

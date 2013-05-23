@@ -33,7 +33,7 @@ body {
     z-index: 999;
     float: left;
     display: block;
-    width: 500px;
+    width: 48%;
     height: 540px;
     position: relative;
     -moz-border-radius: 5px;
@@ -45,13 +45,13 @@ body {
 /*    END  REGISTER MAP */
 
 .connection {
-    margin-left: 10%;
+    margin-left: 5%;
     float: left;
     position: relative;
     display: block;
     z-index: 50;
     margin-right:auto;
-    width: 343px;
+    width: 27%;
     height: 480px;
     padding:30px;
     border: 1px solid rgba(0,0,0,.2);
@@ -68,9 +68,28 @@ body {
     overflow: hidden; 
 }
 
+.connection2{
+    margin:auto;
+    display: block;
+    width: 300px;
+    height: 200px;
+    padding:30px;
+    border: 1px solid rgba(0,0,0,.2);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.5); 
+    -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    overflow: hidden; 
+}
 
 #inputlastname , #inputfirstname , #inputpassword , #inputlogin , #inputaddress {
-    width: 276px;
+    width: 83%;
     height: 48px;
     border: 1px solid rgba(255,255,255,.4);
     -moz-border-radius: 4px;
@@ -94,6 +113,12 @@ input[type=submit] {
 }
 
 .connection input {
+	  background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 16px; 
+	  padding-left:75px;
+	  margin-left: 30px;
+}
+
+.connection2 input {
 	  background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 16px; 
 	  padding-left:75px;
 	  margin-left: 30px;
@@ -134,8 +159,7 @@ input:focus, textarea:focus {
 }
 
 .sendconnection {
-      margin: 0px 0;
-      margin-right: 30%;
+      margin-right: 25%;
 	  width: 138px;
 	  height: 44px;
 	  border: 1px solid #253737;
@@ -150,7 +174,6 @@ input:focus, textarea:focus {
 	  background-image: -o-linear-gradient(bottom, #35b12c 0%, #367c2d 100%);
 	  background-image: -webkit-linear-gradient(bottom, #d14444 0%, #C42F2F 100%);
 	  background-image: linear-gradient(bottom, #35b12c 0%, #367c2d 100%);
-	  float:right;
       color: #fff;
   }
 
