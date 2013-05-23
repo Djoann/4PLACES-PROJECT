@@ -13,12 +13,6 @@
 
 </style>
 
-<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!--  GEOCODER -->    
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
-
         <div class='coverimage'> <!-- coverimage background -->
         
         
@@ -65,12 +59,11 @@
       <!--   menu quartier --> 
       <nav class='street-actions actions-menu'> 
       
-        <a class='first-child A selected' href='membre.html' title='Home'><div class='text-with-icon'>Home</div></a> 
+        <a class='first-child selected' href='membre.html' title='Home'> <i class='#'></i><div class='text-with-icon'>Home</div></a> 
         
-        <a class='B' href='#i' title='New listing'><div class='text-with-icon'>New Annonces</div></a> 
+        <a class='' href='#i' title='New listing'> <i class='#'></i><div class='text-with-icon'>New Annonces</div></a> 
         
-        <a class='C' href='#' title='Community'><div class='text-with-icon'>Voisinage</div></a>
-        
+        <a class='' href='#' title='Community'> <i class='#'></i><div class='text-with-icon'>Voisinage</div></a>
       </nav> <!--  end menu quartier --> 
       
     </div>
@@ -88,13 +81,22 @@
 
         <div class="arrow"></div>
         
-         <h3 href="#" class="buble-title"> Amis
-         <a href="#about" class="announce-delete"> Supprimer </a> </h3>
+         <h3 href="#" class="buble-title"> BLABLA1
+         <a href="#about" class="announce-comments">Read more</a> </h3>
          
         <div class="buble-content">
+            
+               <!-- text annonce -->
+               <p class="bubletxt"> 
+                   BIO :
+                   <h1>BLABLA2</h1>
+               
+               
+               </p>
                
 			<ul class='buble-info'>
 				<li class='icon-with-text-container'>
+					<i class='ss-calendar icon-part'></i>
 					<div class='text-part'>
             <?php echo $users->address; ?>
 					</div>
@@ -104,88 +106,7 @@
 	    </div>
     </div>
     
-    <div class="buble zoombox infos-left">
-    
-            <div class="arrow"></div>
-            
-             <h3 href="#" class="buble-title"> Amis
-             <a href="#about" class="announce-delete"> Supprimer </a> </h3>
-             
-            <div class="buble-content">
-                   
-    			<ul class='buble-info'>
-    				<li class='icon-with-text-container'>
-    					<div class='text-part'>
-                <?php echo $users->address; ?>
-    					</div>
-    				</li>
-    			</ul>
-    
-    	    </div>
-        </div>
-        
-        <div class="buble zoombox infos-left">
-        
-                <div class="arrow"></div>
-                
-                 <h3 href="#" class="buble-title"> Amis
-                 <a href="#about" class="announce-delete"> Supprimer </a> </h3>
-                 
-                <div class="buble-content">
-                       
-        			<ul class='buble-info'>
-        				<li class='icon-with-text-container'>
-        					<div class='text-part'>
-                    <?php echo $users->address; ?>
-        					</div>
-        				</li>
-        			</ul>
-        
-        	    </div>
-            </div>
-            
-            <div class="buble zoombox infos-left">
-            
-                    <div class="arrow"></div>
-                    
-                     <h3 href="#" class="buble-title"> Amis
-                     <a href="#about" class="announce-delete"> Supprimer </a> </h3>
-                     
-                    <div class="buble-content">
-                           
-            			<ul class='buble-info'>
-            				<li class='icon-with-text-container'>
-            					<div class='text-part'>
-                        <?php echo $users->address; ?>
-            					</div>
-            				</li>
-            			</ul>
-            
-            	    </div>
-                </div>
-                
-                <div class="buble zoombox infos-left">
-                
-                        <div class="arrow"></div>
-                        
-                         <h3 href="#" class="buble-title"> Amis
-                         <a href="#about" class="announce-delete"> Supprimer </a> </h3>
-                         
-                        <div class="buble-content">
-                               
-                			<ul class='buble-info'>
-                				<li class='icon-with-text-container'>
-                					<div class='text-part'>
-                            <?php echo $users->address; ?>
-                					</div>
-                				</li>
-                			</ul>
-                
-                	    </div>
-                    </div>
-    
 </div> <!-- END PROFILE INFO BOX -->
-
 
 
 
@@ -230,21 +151,4 @@
 
 </section> <!--  END PROFILE NFOS -->
 
-<<<<<<< HEAD
-<script type="text/javascript">
-    $(".coverimage").click( function () {
-        alert("hello");
-    
-    });
-    
-    
-</script>
-
-
-<script> 
-
-
-</script>
-=======
 <!-- TEST -->
->>>>>>> 1b53c20ac8d0e913b6a7bac4f59b08d4e23e2950

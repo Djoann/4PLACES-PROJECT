@@ -18,8 +18,10 @@
                         <input type="hidden" name="id" value="">                
                         <input type="hidden" name="user_id" value=""> 
                         <input type="hidden" name="lat" value="">
-                        <input type="hidden" name="lng" value=""> 
-                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['User']->id; ?>">                
+                        <input type="hidden" name="lng" value="">
+                        <?php if ($this->Session->isLogged()): ?>
+                          <input type="hidden" name="user_id" value="<?php echo $_SESSION['User']->id; ?>">
+                        <?php endif ?>
                         <a href="#"><button type="submit">Poster l'annonce !</button></a>
                         <label for="inputcontent"></label>
                         <input type="text" id="titlevalue" name="title" value="" placeholder="Titre"/>

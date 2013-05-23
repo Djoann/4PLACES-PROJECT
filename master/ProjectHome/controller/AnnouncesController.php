@@ -61,6 +61,7 @@
 					
 				}
 				else{
+					$this->redirect('');
 					$this->Session->setFlash('Certaines informations ne sont pas valides, merci de les corriger.','error');
 				}
 			}
@@ -98,15 +99,29 @@
 					'user_id'		=> $_SESSION['User']->id
 					)
 				));
-			if($_SESSION['User']->id == $announce->user_id){
+			if($_SESSION['User']->id === $announce->user_id){
 				$this->Announce->delete($id);
 				$this->redirect('users/'.$_SESSION['User']->id);
-				$this->Session->setFlash('L\'annonce bien été supprimée.');
+				$this->Session->setFlash('L\'annonce a bien été supprimée.');
 			}
 			else{
 				$this->Session->setFlash('Vous n\'avez pas la permission de supprimer cette annonce.');
 				$this->redirect('users/'.$_SESSION['User']->id);
 			}
+		}
+
+		function admin_delete($id){
+			$this->loadModel('Announce');
+			$this->Announce->delete($id);
+			$this->Session->setFlash('L\'annonce a bien été supprimée.');
+			$this->redirect('admin/');
+		}
+
+		function admin_index(){
+			$this->loadModel('Announce');
+			$conditions = array('solved'	=> '0');
+			$d['announces'] = $this->Announce->find($conditions);
+			$this->set($d);
 		}
 
 		function getAnnounces(){
