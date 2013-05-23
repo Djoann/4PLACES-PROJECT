@@ -3,14 +3,17 @@
 	
 }
 
+.connection {
+	height:400px;
+}
 #inputlastname , #inputfirstname , #inputpassword , #inputlogin , #inputaddress {
 margin-left:-1px;
 width:100%;
 }
 
 
+
 .test-geocoding-map {
-	width:45%;
 	height:450px;
 	margin-left:3%;
 }

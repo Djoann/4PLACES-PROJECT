@@ -10,3 +10,14 @@
 .sendconnection {
 margin-right:15%;
 }
+
+.test-geocoding-map{
+width:0px;
+height:0px;
+visibility:hidden;
+}
+
+.connection {
+	width:200px;
+	margin-left:28px;
+}
