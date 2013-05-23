@@ -50,7 +50,7 @@
           
           <!-- Mon Profil  -->
           <?php if (isset($_SESSION['User'])){ ?>
-            <li class="menuli"><a href="<?php echo Router::url('users/profile/id:'.$_SESSION['User']->id); ?>">Mon profil</a></li>
+            <li class="menuli"><a href="<?php echo Router::url('users/profile/id:'.$_SESSION['User']->id); ?>">Profil</a></li>
             <li class="menuli"><a href="<?php echo Router::url('users/signout'); ?>">Logout</a></li>
           <?php }else{ ?>
             <!-- Inscription  -->
