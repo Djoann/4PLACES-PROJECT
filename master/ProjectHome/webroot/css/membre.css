@@ -40,6 +40,7 @@ border: 1px solid #b0b0b0;
 }
 
 #profil-infobox {
+overflow: scroll;
 height: 300px;
 background-color: white;
 border-radius: 5px;
