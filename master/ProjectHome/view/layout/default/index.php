@@ -18,24 +18,13 @@
 <link href="<?php echo Router::webroot('css/editor.css'); ?>" rel="stylesheet">
 
 <!-- 768 -->
-<link media="screen and (max-width: 768px)" href="<?php echo Router::webroot('css/membre-768.css'); ?>" rel="stylesheet">
-<link media="screen and (max-width: 768px)" href="<?php echo Router::webroot('css/bublebox-768.css'); ?>" rel="stylesheet">
 <link media="screen and (max-width: 768px)" href="<?php echo Router::webroot('css/connection-768.css'); ?>" rel="stylesheet">
-
-<link media="screen and (max-width: 768px)" href="<?php echo Router::webroot('css/map-768.css'); ?>" rel="stylesheet">
-<link media="screen and (max-width: 768px)" href="<?php echo Router::webroot('css/footer-768.css'); ?>" rel="stylesheet">
 <link media="screen and (max-width: 768px)" href="<?php echo Router::webroot('css/style-768.css'); ?>" rel="stylesheet">
-<link media="screen and (max-width: 768px)" href="<?php echo Router::webroot('css/editor-768.css'); ?>" rel="stylesheet">
 
 <!-- 320 -->
 <link media="screen and (max-width: 320px)" href="<?php echo Router::webroot('css/membre-320.css'); ?>" rel="stylesheet">
-<link media="screen and (max-width: 320px)" href="<?php echo Router::webroot('css/bublebox-320.css'); ?>" rel="stylesheet">
 <link media="screen and (max-width: 320px)" href="<?php echo Router::webroot('css/connection-320.css'); ?>" rel="stylesheet">
-
-<link media="screen and (max-width: 320px)" href="<?php echo Router::webroot('css/map-320.css'); ?>" rel="stylesheet">
-<link media="screen and (max-width: 320px)" href="<?php echo Router::webroot('css/footer-320.css'); ?>" rel="stylesheet">
 <link media="screen and (max-width: 320px)" href="<?php echo Router::webroot('css/style-320.css'); ?>" rel="stylesheet">
-<link media="screen and (max-width: 320px)" href="<?php echo Router::webroot('css/editor-320.css'); ?>" rel="stylesheet">
 
 
 

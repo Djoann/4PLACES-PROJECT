@@ -1,0 +1,41 @@
+.coverimage {
+	visibility:hidden;
+}
+
+.street-logo {
+	margin-left:23%;
+	top:-165px;
+	z-index:0;
+}
+
+.street-intro {
+	position:relative;
+	top:20px;
+	margin-left:-50%;
+	overflow:hidden;
+	z-index:0;
+}
+
+.street-navigation {
+	visibility:hidden;
+}
+
+#profil-infobox {
+	float:;
+	width:100%;
+	position:relative;
+	top:-89px;
+}
+
+#profilemasterbox {
+	overflow:hidden;
+	margin-left:0%;
+	width:100%;
+	position:relative;
+	top: -80px;
+	height:auto;
+}
+
+.buble {
+	z-index:0;
+}

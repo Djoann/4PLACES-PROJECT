@@ -4,6 +4,7 @@ color:red;
 
 .navbar-inner {
 	min-height:70px;
+	z-index:1000;
 }
 
 #header .brand {
@@ -40,4 +41,8 @@ color:red;
 }
 .display {
 	margin-left:0
+}
+
+#footer{
+	visibility:hidden;
 }
