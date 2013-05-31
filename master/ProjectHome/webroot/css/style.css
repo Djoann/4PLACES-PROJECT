@@ -190,3 +190,7 @@ float: right;
 #titlevalue {
     height: 20px;
 }
+
+.reannounces {
+display:none;
+}

@@ -1,6 +1,4 @@
-#header .brand {
-color:red;
-}
+
 
 .navbar-inner {
 	min-height:70px;
@@ -45,4 +43,8 @@ color:red;
 
 #footer{
 	visibility:hidden;
+}
+
+.reannounces {
+display:block;
 }
