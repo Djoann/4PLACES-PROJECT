@@ -119,6 +119,87 @@
               	
               	<?php endforeach ?>
           </div><!-- END master buble box --> 
+          <div class="reannounces">
+            <?php
+                  $users = $this->request('Users','admin_getUsers');
+                  $medias = $this->request('Medias', 'admin_getImg');
+                  $comments = $this->request('Comments', 'getCom');
+                ?>
+                
+                <?php foreach ($announces as $k => $v): ?> 
+                <!-- ZOOM bublebox CHAQUE annonce --> 
+            
+          <!-- ZOOM bublebox // annonce --> 
+              
+              <div class="buble zoombox">
+                 <h3 class="buble-title"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>"  ><a class="geo-announce"  data-lat="<?php echo $v->lat; ?>" data-lng="<?php echo $v->lng; ?>" href="#geo-ann"> <?php echo $v->title; ?></a> - <a href="#id-profile" id="id-profile">
+                 <?php
+                 foreach($users as $u){
+                     if($u->id == $v->user_id){
+                        echo $u->firstname .' '. $u->lastname;
+                        $media = $u->media_id;
+                     }
+                 } ?></a></h3>
+                <div class="buble-content">
+                  <!-- text annonce -->
+                  <div id="read-com" class="page-header">
+                    <p class="bubletxt"><?php echo $v->content; ?></p>
+                    <ul>
+                      <?php foreach ($comments as $c): ?>
+                        <?php if ($v->id == $c->announce_id): ?>
+                          <?php if ($_SESSION['User']->id == $c->user_id): ?>
+                            <li><?php echo $c->content ?></li>
+                          <?php endif ?>
+                        <?php endif ?>
+                      <?php endforeach ?>
+                    </ul>
+                    <?php require(ROOT.DS.'view'.DS.'comments'.DS.'index.php') ?>
+                  </div> <!-- end read com -->
+                  <div class='item-image'>
+                </div>
+                        <!-- Auteur -->
+                       <div class='annonce-author'>
+                           <div class='annonce-author-image'>
+                              <a href="#autorprofile">
+                                <?php if ($media === null){ ?>
+                                  <img alt="author" src="http://www.illunik.fr/img/anonymous.png"/>
+                                <?php }else{ ?>
+                                  <?php foreach ($medias as $m): ?>
+                                    <?php if ($m->id == $media): ?>
+                                      <img alt="author" src="<?php $m->file ?>" />
+                                    <?php endif ?>
+                                  <?php endforeach ?>
+                                <?php } ?>
+                              </a>
+                           </div>
+                           <div class='annonce-author-description'>
+                               <h3>
+                               Adresse : 
+                               <a href="<?php echo Router::url("announces/view/id:{$v->id}"); ?>" id="annonce_author_link"><?php echo $v->address; ?> <!-- PHP User adress --></a>
+                               </h3>
+                            </div>
+                        </div>
+  
+  
+                        <!-- infos Annonce time vues -->
+                       <ul class='buble-info'>
+                           <li class='icon-with-text-container'>
+                               <div class='text-part'>
+                                   Created 22 hours ago
+                               </div>
+                           </li>
+                           <li class='icon-with-text-container'>
+                                   <a href="#about" class="announce-comments"> Read more </a>
+                           </li>
+                       </ul>
+                       
+                </div>
+              </div>
+              
+              
+                
+                <?php endforeach ?>
+          </div>
               
               
               
