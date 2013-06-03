@@ -1,4 +1,3 @@
-
 <body>
 
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
@@ -435,7 +434,7 @@ $(document).ready(function(){
             }) 
            
            
-           //EVENT AFFICHER UNE ANNONCES 
+           //EVENT AFFICHER UNE ANNONCES IN BUBLE MAP
            $("#masterbublebox h3").each( function () {
                    //$(this).children().addClass("hello")
                    var e = $(this);
